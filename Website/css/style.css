@@ -305,8 +305,23 @@ h2{
 	100% {margin-left: -1000px;}
 }
 
-
+#text{
+  font-size: 20px;
+  color: white;
+}
 @media screen and (max-width:750px){
   #sol{
   left:35vw;
   }
+  .x1 {display: none;}
+.x2 {display: none;}
+.x3 {display: none;}
+.x4 {display: none;}
+.x5 {display: none;}
+.x6 {display: none;}
+.x7 {display: none;}
+
+ ul {
+   margin-top: 50px;
+ }
+}
