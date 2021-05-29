@@ -21,7 +21,7 @@ time, mark, audio, video {
 
 .loader-wrapper {
   width: 100%;
-  height: 150%;
+  height: 300%;
   position: absolute;
   top: 0;
   left: 0;
@@ -39,7 +39,7 @@ time, mark, audio, video {
   position: relative;
   border: 4px solid #Fff;
   animation: loader 5s infinite ease;
-  margin-top: -35%;
+  margin-top: -100%;
 
 }
 .loader-inner {
@@ -308,20 +308,33 @@ h2{
 #text{
   font-size: 20px;
   color: white;
+ text-align:center;
+ background-color: darkblue;
+ margin: 100px;
 }
-@media screen and (max-width:750px){
+
+@media screen and (max-width:1500px){
   #sol{
   left:35vw;
   }
-  .x1 {display: none;}
-.x2 {display: none;}
-.x3 {display: none;}
-.x4 {display: none;}
-.x5 {display: none;}
-.x6 {display: none;}
-.x7 {display: none;}
+.x1{display: none;}
+.x2{display: none;}
+.x3{display: none;}
+.x4{display: none;}
+.x5{display: none;}
+.x6{display: none;}
+.x7{display: none;}
+ul{
+  margin-top: 50px;
+  position: absolute;
+}
+h2{
+  margin-top: 250px;
 
- ul {
-   margin-top: 50px;
- }
+}
+
+#ytVideo{
+  margin-left: 25vw;
+  margin-top: 100px;
+}
 }
