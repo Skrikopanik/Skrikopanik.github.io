@@ -81,6 +81,7 @@ html, body {
 	background-color: transparent;
 	box-shadow: 25px 10px 0px 0px #fff;
 overflow-x: hidden;
+z-index: -500;
 }
 #sol{
 position: absolute;
@@ -92,6 +93,7 @@ border-radius: 50%;
   height: 150px;
   width: 150px;
   overflow-x: hidden;
+
 background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(250,255,1,1) 45%, rgba(99,108,255,1) 83%, rgba(255,255,255,1) 100%);
 }
 
@@ -214,7 +216,7 @@ h2{
 	-webkit-animation: moveclouds 25s linear infinite;
 	-moz-animation: moveclouds 25s linear infinite;
 	-o-animation: moveclouds 25s linear infinite;
-
+z-index: 5000;
 }
 
 /*variable speed, opacity, and position of clouds for realistic effect*/
@@ -248,7 +250,7 @@ h2{
 
 .x4 {
 	left: 20vw; top: -400px;
-
+z-index: 5000;
 	-webkit-transform: scale(0.75);
 	-moz-transform: scale(0.75);
 	transform: scale(0.75);
@@ -273,7 +275,7 @@ h2{
 }
 .x6 {
 	left: 20vw; top: -600px;
-
+z-index: 5000;
 	-webkit-transform: scale(0.8);
 	-moz-transform: scale(0.8);
 	transform: scale(0.8);
@@ -285,7 +287,7 @@ h2{
 }
 .x7 {
 	left: 20vw; top: -540px;
-
+z-index: 5000;
 	-webkit-transform: scale(0.2);
 	-moz-transform: scale(0.2);
 	transform: scale(0.2);
@@ -316,6 +318,7 @@ h2{
  text-align:center;
  background-color: darkblue;
  margin: 100px;
+ padding: 10px;
 }
 
 @media screen and (max-width:750px){
