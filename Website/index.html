@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <link rel="stylesheet" href="css/style.css">
+    <meta charset="utf-8">
+    <title>Sunny Side</title>
+  </head>
+  <body>
+
+
+    <div class="loader-wrapper">
+        <span class="loader"><span class="loader-inner"></span></span>
+      </div>
+<h1 class="glow">Sunny Side</h1>
+
+
+<div id="sol"></div>
+<div id="moon"></div>
+
+
+	<div class="cloud x1"></div>
+	<div class="cloud x2"></div>
+	<div class="cloud x3"></div>
+	<div class="cloud x4"></div>
+	<div class="cloud x5"></div>
+  <div class="cloud x6"></div>
+	<div class="cloud x7"></div>
+
+<nav>
+  <ul>
+    <li><a href="#"><p>Home</p></a></li>
+    <li><a href="#"><p>News</p></a></li>
+    <li><a href="#"><p>Contact</p></a></li>
+    <li><a href="#"><p>About</p></a></li>
+  </ul>
+</nav>
+
+
+
+<h2>
+Climate change
+</h2>
+<div id="ytVideo">
+
+<iframe style="height:300px;width:50vw;" src="https://www.youtube.com/embed/G4H1N_yXBiA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"> </script>
+    <script>
+
+
+$(".loader-wrapper").css({'visibility': 'visible'   });
+
+
+    $("#sol").css({'visibility': 'hidden'   });
+
+
+      d = new Date();
+
+
+var long;
+var lat;
+var sunr;
+var suns;
+
+async function getData() {
+  var data;
+  await fetch('http://api.ipstack.com/212.3.30.155?access_key=a0fd3a6dbcc4d0f477ce15f1a293b61b& output = json' )
+      .then( response=>{
+        return response.json();
+      })
+
+      .then(pos=>{
+        fetch('https://api.sunrise-sunset.org/json?lat='+ pos.latitude +'&lng=' +pos.longitude)
+
+         .then(resp=>{
+           return resp.json();
+         })
+         .then(sun=>{
+         sunr = sun.results.sunrise;
+          suns = sun.results.sunset;
+         log(sunr,suns);
+         })
+      });
+}
+function log(sunRise,sunSet){
+
+
+
+
+var sunSetT=sunSet.substring(0,1);
+var sunRiseT=sunRise.substring(0,1);
+var sunSetT1 = parseInt(sunSetT, 10)+12;
+var sunRiseT1 = parseInt(sunRiseT, 10);
+var dayLength= sunSetT1-sunRiseT1;
+var nightLength= 23-dayLength;
+
+var sScreenParts= 80/dayLength;
+var hej =(sScreenParts*timma);
+
+
+
+var moonTimma= timma-sunSetT1;
+var mScreenParts= 80/nightLength;
+
+var tidInnanKlockanNoll = 23-sunSetT1;
+
+console.log(moonTimma);
+if(timma<12){
+  var moonsak2 = timma+tidInnanKlockanNoll;
+moonTimma=moonsak2+1;
+
+
+console.log(moonTimma);
+
+}
+
+var mHej=(mScreenParts*moonTimma);
+
+if (timma>sunRiseT1 && timma<sunSetT1 ){
+  $("#sol").css({
+    'left':hej +'vw',
+        'visibility': 'visible'          });
+}
+console.log(sunSetT1);
+
+  if (timma<sunRiseT1 || timma>sunSetT1) {
+  $("body").css({"background-color": "black"});
+    $("#moon").css({
+      'left':mHej +'vw',
+      'visibility': 'visible'
+   });
+   $("h1").css({"background-color": "black"});
+   $("ul").css({"background-color": "black"});
+
+  }
+
+
+
+//fixa månen
+
+
+
+
+
+
+
+}
+getData();
+
+
+
+var timma=d.getHours();
+
+
+var i = 0;
+var loadTimer = setInterval(function(){
+  $(".loader-wrapper").fadeOut("slow");
+  console.log(++i);
+  clearInterval(loadTimer);
+}, 3500); // tack Filip
+
+
+
+
+
+    </script>
+  </body>
+
+  </html>
