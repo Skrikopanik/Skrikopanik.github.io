@@ -3,6 +3,9 @@
   <head>
     <link rel="stylesheet" href="css/style.css">
     <meta charset="utf-8">
+  <meta name="SunnySide">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="SunnySide" content="description">
     <title>Sunny Side</title>
   </head>
   <body>
@@ -87,7 +90,7 @@ var suns;
 
 async function getData() {
   var data;
-  await fetch('https://api.ipstack.com/212.3.30.155?access_key=a0fd3a6dbcc4d0f477ce15f1a293b61b& output = json' )
+  await fetch('http://api.ipstack.com/212.3.30.155?access_key=a0fd3a6dbcc4d0f477ce15f1a293b61b& output = json' )
       .then( response=>{
         return response.json();
       })
